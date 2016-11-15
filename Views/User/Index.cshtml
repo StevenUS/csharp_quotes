@@ -1,0 +1,81 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Wall of Quotes</h1>
+<div class="container">
+    <div id=register class="six columns">
+        <h3>Register</h3>
+        <div class="labels">
+            <p>First:</p>
+            <p>Last:</p>
+            <p>Email:</p>
+            <p>PW:</p>
+            <p>PWC:</p>
+        </div>
+        <div class="forms">
+            <form action="/register" method="post">
+                <input type="text" name="first_name"><br>
+                <input type="text" name="last_name"><br>
+                <input type="text" name="email"><br>
+                <input type="text" name="password"><br>
+                <input type="text" name="passwordConf"><br>
+                <input type="submit" name="submit"><br>
+            </form>
+        </div>
+        <div class=errors>
+            @{
+                if(ViewBag.showErrors)
+                {
+                    foreach(var error in ViewBag.errors)
+                        {
+                            //If there are any errors for a field...
+                            if(@error.Errors.Count > 0)
+                            {
+                                // We show the first error for that field
+                                <ul>
+                                    <li>@error.Errors[0].ErrorMessage</li>
+                                </ul>
+                            }
+                        }
+                }
+                if(ViewBag.emailInUse != null)
+                {
+                    <p>@ViewBag.emailInUse</p>
+                }
+            }
+        </div>
+        <div>
+            @{
+                if(ViewBag.showSuccess != null)
+                {
+                    <p>"Registration Successful!"</p>
+                }
+            }
+        </div>
+    </div>
+    <div id="login" class="six columns">
+        <h3>Log-In</h3>
+        <div class="labels">
+            <p>Email:</p>
+            <p>PW:</p>
+        </div>
+        <div class="forms">
+            <form action="/login" method="post">
+                <input type="text" name="Email"><br>
+                <input type="text" name="Password"><br>
+                <input type="submit" name="suzzbmit"><br>
+            </form>
+        </div>
+        <div>
+            @{
+                if(ViewBag.loginError != null)
+                {
+                    <ul>
+                        <li>@ViewBag.loginError</li>
+                    </ul>
+                    
+                }
+            }
+        </div>
+    </div>
+</div>

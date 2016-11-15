@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>Edit Quote</h2>
+<form action="/edit_quote" method="post">
+    <label>quote: </label><textarea name="text" cols="30" rows="10" placeholder="@ViewBag.prevText.text"></textarea><br>
+    <input type="hidden" name="id" value="@ViewBag.prevText.id">
+    <input type="submit" name="submit">
+</form><br>

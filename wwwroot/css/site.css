@@ -1,0 +1,24 @@
+/*#register{
+    display: inline-block;
+    width: 30%;
+}
+#login{
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}*/
+.labels{
+    display: inline-block;
+    vertical-align: top;
+    line-height: 30px;
+}
+.forms{
+    display: inline-block;
+    vertical-align: top;
+}
+.name{
+    margin-left: 10px;
+}
+.delete{
+    size: 10px;
+}

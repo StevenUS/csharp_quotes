@@ -1,0 +1,26 @@
+<h2>Quotes</h2>
+<a href="quote">Add a Quote</a>
+<a href="logout">Logout</a>
+<hr>
+@{
+    foreach(var Current in ViewBag.Quotes)
+    {
+        <div class="container">
+            <div class="eight columns">
+                <p>@Current.text</p>
+                <p class="name">
+                <span class="name">-@Current.user.first_name </span>
+            </div>
+            <div class="four columns">
+                    @if(ViewBag.UserID == @Current.user.id)
+                    {
+                        <a href="edit/@Current.id">edit</a><br>
+                        <a href="delete/@Current.id">delete</a>
+                    }
+                
+            </div>
+        </div>
+        <hr>
+    }
+}
+<br>
