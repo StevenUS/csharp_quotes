@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace quoteRedux.Models
 {
+    //adding comment for no reason
     //create a class for all models to extend from
     public abstract class BaseEntity{}
     public class User : BaseEntity
