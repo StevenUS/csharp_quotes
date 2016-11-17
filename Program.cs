@@ -7,13 +7,15 @@ namespace quoteRedux
     {
         public static void Main(string[] args)
         {
-            var host = new WebHostBuilder()
+            IWebHost host = new WebHostBuilder()
+                .UseIISIntegration()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();
 
             host.Run();
+
         }
     }
 }
